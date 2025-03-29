@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Number Verification</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Your Mobile Number</h1>
+    <input type="tel" id="phoneNumber" placeholder="Mobile Number" />
+    <button onclick="submitNumber()">Submit</button>
+    <p id="errorMessage" class="error"></p>
+  </div>
+
+  <script>
+    function submitNumber() {
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (/^\d{10}$/.test(phoneNumber)) {
+        window.location.href = "language.html"; 
+      } else {
+        errorMessage.textContent = "Please enter a valid 10-digit phone number.";
+      }
+    }
+  </script>
+</body>
+</html>
